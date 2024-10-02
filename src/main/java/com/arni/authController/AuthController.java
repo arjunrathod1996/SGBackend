@@ -33,6 +33,8 @@ import com.arni.user.UsersManagementService;
 @RestController
 @RequestMapping("/login")
 public class AuthController {
+    
+
 	
 	public Logger logger = LoggerFactory.getLogger(getClass());
 	
@@ -47,6 +49,7 @@ public class AuthController {
 
     @PostMapping("/authenticate")
     public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest) {
+        logger.debug(" >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> : ");
         logger.info("Received authentication request for email: {}", loginRequest.getEmail());
 
         try {
